@@ -24,18 +24,15 @@ const SITE_CONFIG = {
   ctaEmail: "quinn@example.com", // clicking the button opens an email to this address
 
   /* ---------- TEXT PAGES ---------- */
-  cv: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Add CV text here.
+  cv: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. cv text
   
-  Use a blank line between paragraphs.
-  
-  Education, exhibitions, publications — whatever you want.`,
+  2021-2025: BA in Goat Studies, Wheaton College`,
 
-  bio: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Add bio text here.
+  bio: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. bio text. Quantle was born to a legendary goat named Kantle
   
   yeah u look like it`,
 
-  contact: `For inquiries about purchasing work or commissioning a piece, 
-  please reach out at quinn@example.com.
+  contact: `boom #Ya
   
   vertical money spread`,
 
