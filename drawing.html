@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drawing — Quinn Antle</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="site-wrapper">
+
+  <!-- ===================== MOBILE HEADER =====================
+       Visible only on mobile (hidden on desktop via CSS).
+       If you add a nav link, add it here AND in .sidebar-nav below.
+       =========================================================== -->
+  <header class="mobile-header">
+    <div class="mobile-identity">
+      <a href="index.html"><span class="mobile-name">Quinn Antle</span></a>
+      <span class="mobile-birth">b. 2003</span>
+    </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Mobile nav dropdown (accordion, pushes content down) -->
+  <nav class="mobile-nav-dropdown">
+    <ul>
+      <li><a href="drawing.html">Drawing</a></li>
+      <li><a href="painting.html">Painting</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="bio.html">Bio</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== SIDEBAR =====================
+       The sidebar is identical across all pages.
+       If you need to change nav links or add a page,
+       update this block in every .html file.
+       ================================================== -->
+  <aside class="sidebar">
+    <div class="sidebar-identity">
+      <a href="index.html"><div class="sidebar-name">Quinn Antle</div></a>
+      <div class="sidebar-birth">b. 2003</div>
+    </div>
+
+    <hr class="sidebar-rule">
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="drawing.html">Drawing</a></li>
+        <li><a href="painting.html">Painting</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="bio.html">Bio</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-cta">
+      <a class="btn-cta" href="#">Request Pricing &amp; Availability</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="mobile-page-header">
+      <h1 class="section-heading">Drawing</h1>
+      <div class="mobile-cta">
+        <a class="btn-cta" href="#">Request Pricing &amp; Availability</a>
+      </div>
+    </div>
+    <div class="gallery-grid" id="drawing-gallery"></div>
+  </main>
+
+</div>
+
+<script src="config.js"></script>
+<script src="js/gallery.js"></script>
+<script>
+  renderGallery("drawing-gallery", SITE_CONFIG.drawings, "drawings");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,475 @@
+/* ============================================================
+   QUINN ANTLE — PORTFOLIO STYLESHEET
+   Shared across all pages.
+   ============================================================ */
+
+/* ---------- RESET & BASE ---------- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg:        #ffffff;
+  --color-text:      #1a1a1a;
+  --color-muted:     #888880;
+  --color-rule:      #d0cfc9;
+  --color-cta-bg:    #1a1a1a;
+  --color-cta-text:  #fff;
+  --color-nav-hover: #1a1a1a;
+
+  --sidebar-width: 200px;
+
+  --font-display: "Instrument Serif", serif;
+  --font-body:    "Roboto", sans-serif;
+
+  --text-base:   14px;
+  --text-sm:     12px;
+  --text-xs:     11px;
+
+  --space-xs:   8px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  40px;
+  --space-xl:  64px;
+}
+
+html {
+  font-size: var(--text-base);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+body {
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- LAYOUT ---------- */
+
+.site-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ---------- SIDEBAR ---------- */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  border-right: 1px solid var(--color-rule);
+  background: var(--color-bg);
+  z-index: 100;
+}
+
+.sidebar-identity {
+  margin-bottom: var(--space-xs);
+}
+
+.sidebar-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.sidebar-birth {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  margin-top: 2px;
+}
+
+.sidebar-rule {
+  border: none;
+  border-top: 1px solid var(--color-rule);
+  margin: 0;
+}
+
+/* ---------- NAV ---------- */
+
+.sidebar-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar-nav a {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  display: block;
+  padding: 3px 0;
+  transition: color 0.15s ease;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+  color: var(--color-nav-hover);
+}
+
+
+/* ---------- CTA BUTTON ---------- */
+
+.sidebar-cta {
+  text-decoration: underline;
+}
+
+.btn-cta {
+  display: block;
+  width: 100%;
+  color: #5c5c5c;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  text-align: center;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  text-decoration: underline;
+  border: none;
+  transition: opacity 0.15s ease;
+  line-height: 1.4;
+}
+
+.btn-cta:hover {
+  color: #000;
+}
+
+/* ---------- MAIN CONTENT AREA ---------- */
+
+.main-content {
+  margin-left: 10px;
+  padding: var(--space-md) var(--space-lg);
+  width: calc(100% - var(--sidebar-width));
+  min-height: 100vh;
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+/* mobile-page-header and its CTA are mobile-only.
+   On desktop the sidebar heading and sidebar CTA handle both roles. */
+.mobile-page-header {
+  display: block;
+}
+
+.mobile-cta {
+  display: none;
+}
+
+/* ---------- GALLERY GRID ---------- */
+
+/*
+  The gallery uses a 3-column CSS grid.
+  On the Home page, items alternate: drawing, painting, drawing, painting...
+  so column 1 is always drawings and column 2 is always paintings,
+  with column 3 picking up overflow.
+  
+  The stagger effect from the wireframe is achieved by giving the
+  second column a top margin offset, so columns feel visually shifted.
+*/
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  align-items: start;  /* critical: lets columns be independent heights */
+}
+
+/* Stagger the second column downward, matching wireframe offset */
+.gallery-grid .artwork-item:nth-child(3n+2) {
+  margin-top: var(--space-xl);
+}
+
+.artwork-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.artwork-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--color-rule); /* placeholder color while image loads */
+}
+
+/* Placeholder shown when no real image is present */
+.artwork-item .img-placeholder {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: var(--color-rule);
+}
+
+.artwork-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.artwork-title {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.artwork-size {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+
+/* ---------- TEXT PAGES (CV / Bio / Contact) ---------- */
+
+.text-page {
+  max-width: 560px;
+}
+
+.text-page-body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.75;
+  color: var(--color-text);
+  white-space: pre-line; /* respects line breaks in the config string */
+}
+
+/* ---------- MOBILE ----------
+   Breakpoint: anything under 768px gets the mobile layout.
+   The sidebar is hidden; a fixed top bar and accordion dropdown replace it.
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+  /* Hide the desktop sidebar entirely */
+  .sidebar {
+    display: none;
+  }
+
+  /* Main content fills full width, no sidebar offset.
+     Top padding must clear: 48px name bar + 72px page header = 120px + breathing room */
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: var(--space-md) var(--space-sm);
+  }
+
+/* --- THIS IS THE BREATHING ROOM --- */
+  body.nav-open .mobile-page-header {
+  top: 250px;
+}
+
+  /* --- MOBILE HEADER BAR --- */
+
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    padding: 0 var(--space-sm);
+    background: var(--color-bg);
+    border-bottom: 1px solid #000;
+    z-index: 200;
+  }
+
+  .mobile-name {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+  }
+  
+
+  .mobile-birth {
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+    margin-left: 6px;
+  }
+
+  .mobile-identity {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+  }
+
+  /* Hamburger button */
+  .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* Tap target is large enough without extra padding */
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--color-text);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    transform-origin: center;
+  }
+
+  /* Animate hamburger → close (X) when nav is open */
+  .hamburger.is-open span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .hamburger.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.is-open span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  /* --- MOBILE NAV DROPDOWN ---
+     Sits directly below the fixed header.
+     Height animates from 0 to auto using max-height trick.
+     Black background, centered links, matches wireframe. */
+
+  .mobile-nav-dropdown {
+    position: fixed;
+    top: 48px; /* flush below the header bar */
+    left: 0;
+    width: 100%;
+    background: var(--color-text); /* black */
+    z-index: 190;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.25s ease;
+  }
+
+  .mobile-nav-dropdown.is-open {
+    max-height: 320px; /* tall enough for all links; adjust if more nav items added */
+  }
+
+  .mobile-nav-dropdown ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-sm) 0;
+    gap: 2px;
+  }
+
+  .mobile-nav-dropdown a {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-bg); /* light text on black */
+    display: block;
+    padding: 10px var(--space-md);
+    text-align: center;
+    transition: opacity 0.15s ease;
+  }
+
+.mobile-nav-dropdown a:hover,
+  .mobile-nav-dropdown a.active {
+    opacity: 0.6;
+  }
+
+  /* --- MOBILE PAGE HEADER (section heading + CTA) ---
+     Fixed directly below the 48px name bar.
+     Heading on first row, CTA button on second row.
+     Gallery scrolls underneath both. */
+
+  .mobile-page-header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    background: var(--color-bg);
+    padding: var(--space-sm) var(--space-sm) 0;
+    z-index: 195;
+    border-bottom: 1px solid var(--color-rule);
+    transition: top 0.25s ease;
+  }
+
+  .mobile-page-header .section-heading {
+    margin-bottom: var(--space-sm);
+    border-bottom:1px solid #000;
+    padding-bottom: var(--space-sm);
+  }
+
+  .mobile-cta {
+    display: block;
+    padding-bottom: var(--space-sm);
+  }
+
+  .mobile-cta .btn-cta {
+    display: block;
+    width: fit-content;
+    padding: 8px var(--space-xs);
+    font-size: var(--text-xs);
+  }
+
+  /* --- MOBILE GALLERY ---
+     Single column, no stagger. */
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  /* Remove the desktop stagger */
+  .gallery-grid .artwork-item:nth-child(3n+2) {
+    margin-top: 0;
+  }
+
+  /* --- MOBILE TEXT PAGES --- */
+
+  .text-page {
+    max-width: 100%;
+  }
+
+}
+
+/* ---------- GOOGLE FONTS IMPORT ----------
+   These load from Google's CDN. The three families are:
+   - IM Fell English (italic serif, used for artist name)
+   - Libre Baskerville (body serif, used for artwork titles and text)
+   - DM Sans (clean sans, used for nav, labels, UI chrome)
+   
+   If you want to go fully offline / no CDN, download the font files
+   and replace this import with @font-face declarations pointing to
+   local files in a "fonts/" folder.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');

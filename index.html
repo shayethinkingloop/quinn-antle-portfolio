@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quinn Antle</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="site-wrapper">
+
+  <!-- ===================== MOBILE HEADER =====================
+       Visible only on mobile (hidden on desktop via CSS).
+       If you add a nav link, add it here AND in .sidebar-nav below.
+       =========================================================== -->
+  <header class="mobile-header">
+    <div class="mobile-identity">
+      <span class="mobile-name">Quinn Antle</span>
+      <span class="mobile-birth">b. 2003</span>
+    </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Mobile nav dropdown (accordion, pushes content down) -->
+  <nav class="mobile-nav-dropdown">
+    <ul>
+      <li><a href="drawing.html">Drawing</a></li>
+      <li><a href="painting.html">Painting</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="bio.html">Bio</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== SIDEBAR =====================
+       The sidebar is identical across all pages.
+       If you need to change nav links or add a page,
+       update this block in every .html file.
+       ================================================== -->
+  <aside class="sidebar">
+    <div class="sidebar-identity">
+      <div class="sidebar-name">Quinn Antle</div>
+      <div class="sidebar-birth">b. 2003</div>
+    </div>
+
+    <hr class="sidebar-rule">
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="drawing.html">Drawing</a></li>
+        <li><a href="painting.html">Painting</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="bio.html">Bio</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-cta">
+      <!-- Text and email address are set from config.js -->
+      <a class="btn-cta" href="#">Request Pricing &amp; Availability</a>
+    </div>
+  </aside>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main class="main-content">
+    <!-- On desktop: section-heading styles normally.
+         On mobile: mobile-page-header wraps it with the CTA button inline. -->
+    <div class="mobile-page-header">
+      <h1 class="section-heading">Recent Work</h1>
+      <div class="mobile-cta">
+        <a class="btn-cta" href="#">Request Pricing &amp; Availability</a>
+      </div>
+    </div>
+
+    <!-- Gallery grid is populated by gallery.js + config.js.
+         Items are inserted in order: drawing1, painting1, drawing2, painting2... -->
+    <div class="gallery-grid" id="home-gallery"></div>
+  </main>
+
+</div>
+
+<script src="config.js"></script>
+<script src="js/gallery.js"></script>
+<script>
+  // Render the interleaved home gallery
+  renderHomeGallery("home-gallery");
+</script>
+
+</body>
+</html>

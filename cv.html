@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — Quinn Antle</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="site-wrapper">
+
+  <header class="mobile-header">
+    <div class="mobile-identity">
+      <a href="index.html"><span class="mobile-name">Quinn Antle</span></a>
+      <span class="mobile-birth">b. 2003</span>
+    </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <nav class="mobile-nav-dropdown">
+    <ul>
+      <li><a href="drawing.html">Drawing</a></li>
+      <li><a href="painting.html">Painting</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="bio.html">Bio</a></li>
+    </ul>
+  </nav>
+
+  <aside class="sidebar">
+    <div class="sidebar-identity">
+      <a href="index.html"><div class="sidebar-name">Quinn Antle</div></a>
+      <div class="sidebar-birth">b. 2003</div>
+    </div>
+    
+    <hr class="sidebar-rule">
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="index.html">Drawing</a></li>
+        <li><a href="painting.html">Painting</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="bio.html">Bio</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-cta">
+      <a class="btn-cta" href="#">Request Pricing &amp; Availability</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="mobile-page-header">
+      <h1 class="section-heading">CV</h1>
+      <div class="mobile-cta">
+        <a class="btn-cta" href="#">Request Pricing &amp; Availability</a>
+      </div>
+    </div>
+    <div class="text-page">
+      <p class="text-page-body" id="cv-body"></p>
+    </div>
+  </main>
+
+</div>
+
+<script src="config.js"></script>
+<script src="js/gallery.js"></script>
+<script>
+  renderTextPage("cv-body", SITE_CONFIG.cv);
+</script>
+
+</body>
+</html>
