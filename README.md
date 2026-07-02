@@ -10,14 +10,14 @@ portfolio/
 ├── cv.html             ← CV text page
 ├── bio.html            ← Bio text page
 ├── contact.html        ← Contact text page
-├── config.js           ← ⭐ THE ONLY FILE QUINN EDITS
+├── config.js           ← ⭐⭐⭐⭐ THE ONLY FILE YOU EDIT
 ├── css/
 │   └── style.css       ← All styles
 ├── js/
 │   └── gallery.js      ← Gallery rendering logic (do not edit)
 └── images/
-    ├── drawings/        ← Drop drawing image files here
-    └── paintings/       ← Drop painting image files here
+    ├── drawings/        ← ⭐⭐⭐ Drop drawing image files here
+    └── paintings/       ← ⭐⭐⭐ Drop painting image files here
 ```
 
 ---
