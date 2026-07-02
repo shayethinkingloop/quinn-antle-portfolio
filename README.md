@@ -31,7 +31,4 @@ find pencil icon that says 'edit this file'
 further instructions there hehehe
 
 ## TEXT ME IMMEDIATELY IF U NEED HELP dont even worry about it i will NOT be busy i am UNEMPLOYED
-offline/CDN-free, download the font files and switch to `@font-face` declarations.
-# quinn-antle-portfolio
-# quinn-antle-portfolio
-# quinn-antle-portfolio
+
